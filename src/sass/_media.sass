@@ -1,0 +1,292 @@
+@media (max-width: 1200px)
+    .menu
+        &_item
+            padding-right: 20px
+        &_link
+            font-size: 13px
+    .promo
+        &_header
+            font-size: 50px
+    .reasons
+        /** картинка с текстом пребьется к верхней границе блока **/
+        &_block
+            align-items: flex-start
+        &_descr
+            width: 300px
+    .mobile
+        &_item
+            width: 290px
+            &_subtitle
+                font-style: 20px
+
+/** ставим 991px, потому что с 992 начинаются большие мониторы, но стили будут идти еще от планшетных размеров, верстка может поехать **/
+@media (max-width: 991px)
+    .menu
+        &_item
+            padding-right: 8px
+        &_link
+            font-size: 10px
+    .subheader
+        &_logo
+            img
+                width: 100%
+        &_official
+            font-size: 11px
+        &_phone
+            font-size: 18px
+        &_btn
+            margin-top: 21px
+            height: 40px
+            width: 100%
+    .promo
+        &_header
+            font-size: 40px
+        &_subheader
+            font-size: 30px
+    .reasons
+        /** делаем элементы в столбик, выравниваем по центру, подписи добовляем отступ **/
+        &_block
+            flex-direction: column
+            align-items: center
+        &_round
+            margin-right: 0
+        &_descr
+            width: 300px
+            margin-top: 20px
+    .mobile
+        &_item
+            width: 290px
+            &_subtitle_1
+                font-style: 20px   
+
+    .footer
+        &_wrapper
+            flex-wrap: wrap
+        &_wrapper > div 
+            width: 100%
+            display: flex 
+            justify-content: center
+            margin-bottom: 20px
+            &:nth-child(1)
+                width: 100%
+            &:nth-child(3)
+                width: 100%
+                justify-content: center
+
+@media (max-width: 767px)
+    /** Зафиксировали меню, построили ссылку внутри вертикально по центру, сделали анимацию(добавив класс активности) и покрасили задний фон **/
+    .menu
+        position: fixed
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        top: 0
+        left: -100%
+        width: 50%
+        height: 100vh
+        padding: 20px 15px
+        background-color: rgba(0, 0, 0, .8)
+        transition: 0.6s
+        &_active
+            left: 0
+        &_item
+            padding-right: 0
+            border: none
+            margin-top: 10px
+        &_link
+            font-size: 20px
+    .hamburger
+        display: block
+        position: absolute
+        right: 10px
+        top: 50%
+        transform: translateY(-50%)
+        width: 26px
+        height: 12px
+        /** делаем гамбургер чистым css и доб-ем плавность анимации **/
+        span
+            display: block
+            height: 2px
+            width: 100%
+            background-color: white
+            margin-bottom: 2px
+            transition: 0.5s all
+        /** создаем класс активности и переделываем гамбургер в крестик **/
+        &_active
+            span
+                margin-bottom: -2px
+                &:nth-child(1)
+                    transform: translateY(3px) rotate(-45deg)
+                &:nth-child(2)
+                    display: none
+                &:nth-child(3)
+                    transform: translateY(3px) rotate(45deg)
+    .xs-hidden
+        display: none
+    .xs-visible
+        display: block
+
+    .subheader
+        &_phone
+            display: block
+            margin-top: 10px
+            text-transform: uppercase
+            font-weight: normal
+            font-size: 16px
+            color: #FFFFFF
+            text-align: center
+            
+        &_btn
+            width: 200px
+            height: 40px  
+            margin: 0 auto
+            display: block 
+            margin-top: 10px
+    .promo
+        &_header
+            font-size: 40px
+            line-height: 45px
+    .choice
+        &_img
+            width: 100%
+
+@media (max-width: 575px)
+    nav
+        height: 30px
+    header
+        height: 30px
+    .subheader
+        height: 60px
+        top: 30px
+        &_official
+            display: none
+        &_logo
+            margin-top: 20px
+        &_phone
+            font-weight: normal
+            font-size: 12px
+            text-align: center
+            text-transform: uppercase
+            margin-top: 11px
+        &_btn
+            width: 110px
+            height: 22px
+            font-weight: normal
+            font-size: 10px
+            margin-top: 6px
+    .promo  
+        min-height: 400px
+        padding: 93px 0 35px 0
+        p
+            display: none
+        &_header
+            padding: 0 24px
+            font-size: 30px
+            line-height: 35px
+        &_subheader
+            font-size: 20px
+            margin-top: 33px
+            padding: 0 10px
+            line-height: 30px
+        &_btn
+            width: 210px
+            height: 50px  
+            font-size: 16px
+            margin-top: 72px
+    .menu
+        width: 85%
+        &_item
+            width: 100%
+            text-align: center
+            padding: 5px
+        &_link
+            display: block
+    .reasons
+        padding: 22px 0 36px
+        &_block
+            margin-top: 26px
+        &_round
+            width: 100px
+            height: 100px
+        &_descr
+            width: 100%
+            margin-top: 27px
+        &_subtitle
+            font-size: 15px
+    .title
+        font-size: 16px
+        margin-top: 15px
+        line-height: 16px
+    .mobile
+        &_item
+            &_subtitle
+                font-style: 18px
+
+    .choice
+        padding-bottom: 48px
+        min-height: 200px
+        .title
+            display: none
+        .subtitle
+            display: none
+        &_img
+            width: 100%
+        &_descr
+            position: relative
+            z-index: 2
+            color: #FFFFFF
+            margin-top: 23px
+            font-size: 20px
+            line-height: 24px
+    .requier
+        padding: 22px 0 30px 0
+        &_title
+            font-style: 16px
+        li
+            margin-bottom: 5px
+        &_list
+            margin-top: 5px
+        &_descr
+            margin-top: 15px
+    .world
+        height: 360px
+        padding: 26px 0 28px 0
+        a
+            margin-top: 211px
+        .label_white
+            width: 76px
+            height: 24px
+        .subtitle_white
+            margin-top: 11px
+    .footer
+        &_divider
+            width: 255px
+        &_wrapper
+            padding-top: 22px
+        &_wrapper > div
+            &:nth-child(1)
+                    order: 2
+            &:nth-child(2)
+                    order: 1
+            &:nth-child(3)
+                    order: 3
+        &_link
+            width: 285px
+            &_main
+                font-style: 14px
+                padding: 0
+            &_sub
+                flex-wrap: wrap
+                justify-content: center
+                a
+                    margin: 0 7px
+            &_lang
+                margin-top: 9px
+                
+        
+            
+    .mobile
+        .subtitle
+            margin-top: 9px
+            
+            
